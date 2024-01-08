@@ -2,6 +2,8 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
+import authRoutes from "./routes/auths";
+
 const app = express();
 
 const PORT = process.env.Port;
@@ -10,7 +12,7 @@ const PORT = process.env.Port;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-
+app.use("/api/auths", authRoutes);
 //dBase
 mongoose.connect(process.env.mongoDB as string);
 
