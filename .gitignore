@@ -1,6 +1,6 @@
 #.evn
 .env
-
+.env.e2e
 # Logs
 logs
 *.log
